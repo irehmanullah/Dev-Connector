@@ -46,11 +46,8 @@ router.post('/', [
         await user.save();
         // return json web token
 
-        const payload = {
-            user: {
-                id: user.id
-            }
-        }
+        const payload = { user: { id: user.id } }
+
         jwt.sign(
             payload,
             config.get('jwtSecret'),
