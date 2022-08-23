@@ -7,12 +7,14 @@ import Login from "./Components/auth/Login";
 import Register from "./Components/auth/Register";
 import "./App.css";
 import store from "./store";
+import Alert from './Components/layout/Alert';
 
 const App = () => {
   return (
     <Provider store={store}>
       <Router>
         <Navbar />
+        <Alert />
         <Routes>
           <Route exact path="/" element={<Landing />} />
           <Route exact path="/login" element={<Login />} />
