@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
+
 import Navbar from "./Components/layout/Navbar";
 import Landing from "./Components/layout/Landing";
 import Login from "./Components/auth/Login";
@@ -13,6 +14,8 @@ import setAuthToken from "./utils/setAuthToken";
 import Dashboard from "./Components/dashboard/Dashboard";
 import PrivateRoute from "./Components/routing/PrivateRoute";
 import ProfileForm from "./Components/profile-forms/ProfileForm";
+import AddExperience from "./Components/profile-forms/AddExperience";
+import AddEducation from "./Components/profile-forms/AddEducation";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -42,6 +45,14 @@ const App = () => {
           <Route
             path="edit-profile"
             element={<PrivateRoute component={ProfileForm} />}
+          />
+          <Route
+            path="add-experience"
+            element={<PrivateRoute component={AddExperience} />}
+          />
+          <Route
+            path="add-education"
+            element={<PrivateRoute component={AddEducation} />}
           />
         </Routes>
       </Router>
