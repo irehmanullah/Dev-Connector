@@ -28,7 +28,7 @@ const Dashboard = ({
         <p className="lead">
           <i className="fas fa-user" /> Welcome {user && user.name}
         </p>
-        {profile !== null ? (
+        {profile ? (
           <>
             <DashboardActions />
             {profile.experience.length > 0 && (
