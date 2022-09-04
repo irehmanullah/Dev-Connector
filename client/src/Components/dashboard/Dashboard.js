@@ -31,10 +31,10 @@ const Dashboard = ({
         {profile ? (
           <>
             <DashboardActions />
-            {profile.experience.length > 0 && (
+            {profile.experience.length && (
               <Experience experience={profile.experience} />
             )}
-            {profile.education.length > 0 && (
+            {profile.education.length && (
               <Education education={profile.education} />
             )}
             <div className="my-2">
