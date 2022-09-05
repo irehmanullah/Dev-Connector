@@ -16,6 +16,7 @@ import PrivateRoute from "./Components/routing/PrivateRoute";
 import ProfileForm from "./Components/profile-forms/ProfileForm";
 import AddExperience from "./Components/profile-forms/AddExperience";
 import AddEducation from "./Components/profile-forms/AddEducation";
+import Profiles from "./Components/profiles/Profiles";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -33,6 +34,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Landing />} />
           <Route exact path="/login" element={<Login />} />
+          <Route path="profiles" element={<Profiles />} />
           <Route exact path="/register" element={<Register />} />
           <Route
             path="dashboard"
