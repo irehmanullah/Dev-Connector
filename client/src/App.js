@@ -20,6 +20,7 @@ import Profiles from "./Components/profiles/Profiles";
 import Profile from "./Components/profile/Profile";
 import Posts from "./Components/posts/Posts";
 import Post from "./Components/post/Post";
+import NotFound from "./Components/layout/NotFound";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -62,6 +63,7 @@ const App = () => {
           />
           <Route path="posts" element={<PrivateRoute component={Posts} />} />
           <Route path="posts/:id" element={<PrivateRoute component={Post} />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </Router>
     </Provider>
