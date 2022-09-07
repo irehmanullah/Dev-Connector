@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -28,7 +28,7 @@ const PostItem = ({
       </p>
 
       {showActions && (
-        <Fragment>
+        <>
           <button
             onClick={() => addLike(_id)}
             type="button"
@@ -59,7 +59,7 @@ const PostItem = ({
               <i className="fas fa-times" />
             </button>
           )}
-        </Fragment>
+        </>
       )}
     </div>
   </div>
