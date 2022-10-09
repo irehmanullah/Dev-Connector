@@ -35,7 +35,7 @@ const App = () => {
     }
   }, []);
 
-  if (auth.loading) return <Spinner />
+  if (localStorage.token && auth.loading) return <Spinner />
 
   return (
     <Provider store={store}>
