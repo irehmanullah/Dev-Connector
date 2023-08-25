@@ -25,7 +25,7 @@ export const loadUser = () => async (dispatch) => {
     setAuthToken(localStorage.token);
   }
   try {
-    const res = await axios.get("/api/auth");
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/auth`);
 
     dispatch({
       type: USER_LOADED,
@@ -42,7 +42,10 @@ export const loadUser = () => async (dispatch) => {
 export const register = (formData) => async (dispatch) => {
   console.log(formData);
   try {
-    const res = await axios.post("/api/users", formData);
+    const res = await axios.post(
+      `${process.env.REACT_APP_BASE_URL}/api/users`,
+      formData
+    );
 
     dispatch({
       type: REGISTER_SUCCESS,
@@ -65,7 +68,10 @@ export const login = (email, password) => async (dispatch) => {
   const body = { email, password };
 
   try {
-    const res = await axios.post("/api/auth", body);
+    const res = await axios.post(
+      `${process.env.REACT_APP_BASE_URL}/api/auth`,
+      body
+    );
 
     dispatch({
       type: LOGIN_SUCCESS,
